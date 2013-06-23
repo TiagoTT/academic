@@ -1,0 +1,13 @@
+main::{
+	int x;
+	semaphore mutex;
+	procreate(
+		funcao::{	
+			while(x > 0 ){
+				x=2;
+				print("traducao do spl",x);
+
+			}
+		}
+	);
+}

@@ -1,0 +1,6 @@
+funcao::{ 
+
+	if(x<0) a=o+p;
+        if(o<0);
+        else if (a==b) r=3;
+} 

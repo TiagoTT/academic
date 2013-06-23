@@ -1,0 +1,7 @@
+main::{ 
+	const int x=0;
+	print("int x", x);
+	
+	if( (x +w)<(4*p) && (l*t/u+1)==(43) )
+		print("int x", x);
+}
