@@ -1,0 +1,64 @@
+###############################################################################
+#	Redes de Computadores
+#	LEEC, IST
+#	2006/2007 Sem I
+#	Projecto Laboratorio I
+###############################################################################
+#	Carla Duarte	51671
+#	Tiago Teodosio	52150
+###############################################################################
+
+Sugerimos a utilizacao do Makefile para compilar, correr e gerar os graficos.
+
+###############################################################################
+
+Para correr o Simulador deve-se estar no directorio onde se encontram os 
+ficheiros com o trafego gerado (experiencia/) e passar dois argumentos na linha
+de comandos:
+
+$ ./Simulador <1 | 2> <1 | 2 | 3 | 4>
+
+O primeiro argumento e' a experiencia a realizar ( 1 ou 2 ).
+O segundo argumento sao as disciplinas a utilizar (1,2,3,4 -> FIFO,WRR,DRR,WFQ).
+
+###############################################################################
+
+Regras validas presentes no Makefile:
+
+make bin
+	Compila o simulador.
+	E' possivel alterar o tamanho dos pacotes atraves de constantes 
+	multiplicativas definidas no ficheiro "ajustes.h".
+	E' tambem possivel activar o modo de debug, que permite observar todos
+	os eventos relativos 'as chegadas/partidas de pacotes aos/dos routers.
+	O formato e' o seguinte:
+	<tempo actual> ("t_zero:" <tempo de partida do pacote> 
+			"tipo:" <1=CHEGADA | 2=PARTIDA>
+			"sessao:" <1 | 2 | 3>
+			"router:" <1 | 2 | 3> )
+	Caso o pacote esteja a sair do ultimo router, 
+	anuncia-se "Pacote chegou.".
+	No caso do WFQ apresenta-se adicionalmente o valor do Round Number:
+	<tempo actual> <round number> ("RoundNumber" "router:" <1 | 2 | 3> )
+	
+make sim
+	Corre todas as simulacoes e gera todos os graficos.
+	Os resultados finais (graficos e estatisticas) encontrar-se-ao no 
+	directorio "resultados".
+	O ficheiro de estatisticas fica em "resultados/resultados.txt" e os
+	graficos ficam separados por experiencia e por disciplina.
+
+make fifo, make wrr, make drr, make wfq
+	Corre apenas a simulacao indicada.
+	Os resultados sao colocados no local indicado acima.
+	
+make clean
+	Limpa os ficheiros objecto (*.o),
+	e os ficheiros de resultados gerados directamente pelo simulador 
+	que servem de suporta aos graficos (exp*).
+
+make reset
+	Limpa tudo: binario do simulador, ficheiros objecto, dados e resultados.
+
+
+###############################################################################
