@@ -1,0 +1,2 @@
+batata 1 bife 2                        
+agua 3 laranja 1                       
